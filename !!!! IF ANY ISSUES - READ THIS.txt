@@ -1,0 +1,18 @@
+Got any issues? Try these following steps.
+
+Note: Most of issues migh be your webhosting related, just follow these steps, before you contact me
+
+1. Check if your web host has - pdo_mysql extention enabled to support pdo database connection
+
+2. Check if your web host has .htacces mod_rewrite enabled
+
+3. Check if your database accepts connection from your web server
+
+4. Check if your host allows sript to send/receive sockets - this is needed for servers querying
+
+Need help? 
+Contact me on: 
+Skype - codinglovely226, 
+Email - codinglovely226@gmail.com
+
+(I usually reply instantly)

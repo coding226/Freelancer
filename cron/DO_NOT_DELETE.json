@@ -1,0 +1,10 @@
+{
+  	"cols": [
+        {"id":"","label":"Date","pattern":"","type":"string"},
+        {"id":"","label":"Votes","pattern":"","type":"number"},
+        {"id":"","label":"Rank","pattern":"","type":"number"},
+        {"id":"","label":"Players","pattern":"","type":"number"},
+        {"id":"","label":"Uptime","pattern":"","type":"number"}
+      ],
+  	"rows": [ ]
+}

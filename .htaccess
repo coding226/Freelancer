@@ -1,0 +1,107 @@
+DirectoryIndex list.php index index.htm
+
+Options -Indexes
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.hytaleonlineservers\.com$
+RewriteRule ^/?$ "http\:\/\/hytaleonlineservers\.com\/" [R=301,L]
+
+# CAPTCHA Image
+RewriteRule ^captcha.png$ engine/captcha/captcha.php [L,QSA]
+
+# Banner Thing 
+RewriteRule ^banner-([0-9]{0,5})-([0-9]{1,5}).gif$ engine/banner.php?id=$1&code=$2 [L,QSA]
+RewriteRule ^icon-([0-9]{0,5})-([0-9]{1,5}).png$ engine/icon.php?id=$1&code=$2 [L,QSA]
+
+# Vote Image Thing 
+RewriteRule ^votebanner-([0-9]{1,5})-([A-Za-z0-9-]{3,6}).png$ engine/vote-banner.php?id=$1&color=$2 [L,QSA]
+
+RewriteRule ^robots.txt$ robots.txt [L,QSA]
+RewriteRule ^sitemap.xml$ list.php?page=sitemap [L,QSA]
+
+# Index Page & Pagination
+RewriteRule ^$ list.php?lang=&page=&category=&pg=1 [L,QSA]
+RewriteRule ^pg.([0-9]{1,9})$ list.php?lang=&page=&category=&pg=$1 [L,QSA]
+
+# Version & Types Servers List
+RewriteRule ^versions/([0-9a-z.-]+)$ list.php?lang=&page=&category=versions&query=$1&pg=1 [L,QSA]
+RewriteRule ^versions/([0-9a-z.-]+)/pg.([0-9]{1,9})$ list.php?lang=&page=&category=versions&query=$1&pg=$2 [L,QSA]
+
+RewriteRule ^types/([0-9a-z.-]+)$ list.php?lang=&page=&category=types&query=$1&pg=1 [L,QSA]
+RewriteRule ^types/([0-9a-z.-]+)/pg.([0-9]{1,9})$ list.php?lang=&page=&category=types&query=$1&pg=$2 [L,QSA]
+
+# CP Pages
+RewriteRule ^cp/([0-9a-z-]+)$ list.php?lang=&page=cp&sub=$1 [L,QSA]
+RewriteRule ^sponsored$ list.php?lang=&page=cp&sub=sponsored&message= [L,QSA]
+RewriteRule ^sponsored/status=thankyou$ list.php?lang=&page=cp&sub=sponsored&message=1 [L,QSA]
+RewriteRule ^cp/server/([a-z-]+).([0-9]{1,6})$ list.php?lang=&page=cp&sub=server&action=$1&id=$2 [L,QSA]
+RewriteRule ^cp/admin/([a-z-]+)$ list.php?lang=&page=cp&sub=admin&admin_sub=$1 [L,QSA]
+RewriteRule ^cp/admin/([a-z-]+)/([a-z-]+)$ list.php?lang=&page=cp&sub=admin&admin_sub=$1&action=$2 [L,QSA]
+RewriteRule ^cp/admin/([a-z-]+)/([0-9]{1,6}).([a-z-]+)$ list.php?lang=&page=cp&sub=admin&admin_sub=$1&id=$2&action=$3 [L,QSA]
+RewriteRule ^cp/admin/servers/pg.([0-9]{1,9})$ list.php?lang=&page=cp&sub=admin&admin_sub=servers&pg=$1 [L,QSA]
+
+# Other Pages
+RewriteRule ^([0-9a-z-]+)$ list.php?lang=&page=$1 [L,QSA]
+
+# PW Recover Page
+RewriteRule ^recover-password/id.([A-Za-z0-9-]{1,50})$ list.php?lang=&page=recover-password&id=$1 [L,QSA]
+
+# Instant Search
+RewriteRule ^servers-search/q=([^\.]{3,50})&cat=([0-9]{1})$ list.php?&page=servers-search&query=$1&cat=$2 [L,QSA]
+
+# Index Page & Pagination
+RewriteRule ^([a-z-]{2,5})/$ list.php?lang=$1&page=&category=&pg=1 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/pg.([0-9]{1,9})$ list.php?lang=$1&page=&category=&pg=$2 [L,QSA]
+
+# Version & Types Servers List
+RewriteRule ^([a-z-]{2,5})/versions/([0-9a-z.-]+)$ list.php?lang=$1&page=&category=versions&query=$2&pg=1 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/versions/([0-9a-z.-]+)/pg.([0-9]{1,9})$ list.php?lang=$1&page=&category=versions&query=$2&pg=$2 [L,QSA]
+
+RewriteRule ^([a-z-]{2,5})/types/([0-9a-z.-]+)$ list.php?lang=$1&page=&category=types&query=21&pg=1 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/types/([0-9a-z.-]+)/pg.([0-9]{1,9})$ list.php?lang=$1&page=&category=types&query=$2&pg=$2 [L,QSA]
+
+# CP Pages
+RewriteRule ^([a-z-]{2,5})/cp/([0-9a-z-]+)$ list.php?lang=$1&page=cp&sub=$2 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/sponsored$ list.php?lang=$1&page=cp&sub=sponsored&message= [L,QSA]
+RewriteRule ^([a-z-]{2,5})/sponsored/status=thankyou$ list.php?lang=$1&page=cp&sub=sponsored&message=1 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/cp/server/([a-z-]+).([0-9]{1,6})$ list.php?lang=$1&page=cp&sub=server&action=$2&id=$3 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/cp/admin/([a-z-]+)$ list.php?lang=$1&page=cp&sub=admin&admin_sub=$2 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/cp/admin/([a-z-]+)/([a-z-]+)$ list.php?lang=$1&page=cp&sub=admin&admin_sub=$2&action=$3 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/cp/admin/([a-z-]+)/([0-9]{1,6}).([a-z-]+)$ list.php?lang=$1&page=cp&sub=admin&admin_sub=$2&id=$3&action=$4 [L,QSA]
+RewriteRule ^([a-z-]{2,5})/cp/admin/servers/pg.([0-9]{1,9})$ list.php?lang=$1&page=cp&sub=admin&admin_sub=servers&pg=$2 [L,QSA]
+
+# Other Pages
+RewriteRule ^([a-z-]{2,5})/([0-9a-z-]+)$ list.php?lang=$1&page=$2 [L,QSA]
+
+# Server Page / Pages
+RewriteRule ^server-([^\.]+).([0-9]{1,4})$ list.php?lang=&page=server&title=$1&id=$2&sub= [L,QSA]
+RewriteRule ^server-([^\.]+).([0-9]{1,4})/([a-z]+)$ list.php?lang=&page=server&title=$1&id=$2&sub=$3 [L,QSA]
+
+# Server Page / Pages
+RewriteRule ^([a-z-]{2,5})/server-([^\.]+).([0-9]{1,4})$ list.php?lang=$1&page=server&title=$2&id=$3&sub= [L,QSA]
+RewriteRule ^([a-z-]{2,5})/server-([^\.]+).([0-9]{1,4})/([a-z]+)$ list.php?lang=$1&page=server&title=$2&id=$3&sub=$4 [L,QSA]
+
+# PW Recover Page
+RewriteRule ^([a-z-]{2,5})/recover-password/id.([A-Za-z0-9-]{1,50})$ list.php?lang=$1&page=recover-password&id=$2 [L,QSA]
+
+# add trailing slash for laguages
+RewriteRule ^([a-z-]{2,5})$ /$1/ [R=301,L]
+
+# remove trailing slash
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+ErrorDocument 404 /not-found
+ErrorDocument 400 /not-found
+ErrorDocument 401 /not-found
+ErrorDocument 403 /not-found
+ErrorDocument 405 /not-found
+ErrorDocument 409 /not-found
+ErrorDocument 413 /not-found
+ErrorDocument 414 /not-found
+ErrorDocument 500 /not-found
+ErrorDocument 501 /not-found
+
+RewriteEngine On 
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule "^(.+)favicon\.ico(|\?.+)$"  "/favicon.ico" [PT]

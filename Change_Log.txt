@@ -1,0 +1,31 @@
+Hey, clients!
+
+I am sorry for not writting this change log before, but as did huge updates, want to let you know what's changed:
+
+[11/11/2018]
+
+- Changed layout of administration area abit
+- Added SMTP mailing option to toplist. So in administration area you can choose how you want to send email, using PHP mail() or SMTP
+- Vote banners, changed font, now current font supports russian, chinese, japanese server names
+
+[11/08/2018]
+
+- Servers Querying, now it's 100% perfect. Fetches servers by IP:port, hostname even by SRV hosts.
+- For paypal set-up you just need paypal email - that's it! Way easier and does the same thing
+- Recaptcha removed, now we use my custom coded anti-bots verification. Does the same thing, less struggle settings everything up, plus eats less resources,
+doesn't required any additional libraries. Many advantages.
+- Fixed some little styling issues. Was nothing serious, but still - my task is to provide high-end product.
+
+[12/28/2019 - ADDED Happy 2019!]
+- Coupons/discounts System
+- Now you can give/remove/manage sponsored servers on admin panel (x1000 times requested feature, finally here)
+- Maintenance mode. Need to do some changes? Don't want visitors to see? Just toggle on/off maintenance mode on admin CP
+- Fixed couple little bugs which been reported (0 known bugs known!)
+- Now sponsored servers can upload custom icons to show instead of numeric rank! 
+
+[10/01/2019]
+- Paypal finally working! Found an issue, modified code it self plus. By the way -> read guide in administration section on how to set up your paypal account properly
+- Added loading animation for submit buttons when clicked
+
+
+Let me know if you will find even smallest bug! It will be fixed in no time! Thank you!
